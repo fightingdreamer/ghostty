@@ -445,11 +445,12 @@ extension Ghostty {
         guard (delay ?? 0) < maxDelay else { return }
 
         // We start at a 50 millisecond delay and do a doubling backoff
-        let nextDelay: TimeInterval = if let delay {
-            delay * 2
+        let nextDelay: TimeInterval
+        if let delay {
+            nextDelay = delay * 2
         } else {
             // 100 milliseconds
-            0.05
+            nextDelay = 0.05
         }
 
         let work: DispatchWorkItem = .init {

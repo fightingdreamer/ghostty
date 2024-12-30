@@ -217,12 +217,12 @@ class BaseTerminalController: NSWindowController,
     // MARK: Local Events
 
     private func localEventHandler(_ event: NSEvent) -> NSEvent? {
-        return switch event.type {
+        switch event.type {
         case .flagsChanged:
-            localEventFlagsChanged(event)
-
+            return localEventFlagsChanged(event)
+            
         default:
-            event
+            return event
         }
     }
 
