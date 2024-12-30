@@ -312,4 +312,4 @@ extension Ghostty.Notification {
 }
 
 // Make the input enum hashable.
-extension ghostty_input_key_e : @retroactive Hashable {}
+extension ghostty_input_key_e : Hashable {}
