@@ -185,7 +185,6 @@ extension Ghostty {
                 // If we have a URL from hovering a link, we show that.
                 if let url = surfaceView.hoverUrl {
                     let padding: CGFloat = 5
-                    let cornerRadius: CGFloat = 9
                     ZStack {
                         HStack {
                             Spacer()
@@ -195,7 +194,7 @@ extension Ghostty {
                                 Text(verbatim: url)
                                     .padding(.init(top: padding, leading: padding, bottom: padding, trailing: padding))
                                     .background(
-                                        UnevenRoundedRectangle(cornerRadii: .init(topLeading: cornerRadius))
+                                        Rectangle()
                                             .fill(.background)
                                     )
                                     .lineLimit(1)
@@ -211,7 +210,7 @@ extension Ghostty {
                                 Text(verbatim: url)
                                     .padding(.init(top: padding, leading: padding, bottom: padding, trailing: padding))
                                     .background(
-                                        UnevenRoundedRectangle(cornerRadii: .init(topTrailing: cornerRadius))
+                                        Rectangle()
                                             .fill(.background)
                                     )
                                     .lineLimit(1)
