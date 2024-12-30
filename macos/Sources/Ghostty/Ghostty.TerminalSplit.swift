@@ -470,6 +470,19 @@ extension Ghostty {
             }
 
             window.makeFirstResponder(to)
+
+            // On newer versions of macOS everything above works great so we're done.
+            if #available(macOS 13, *) { return }
+
+            // On macOS 12, splits do not properly gain focus. I don't know why, but
+            // it seems like the `focused` SwiftUI method doesn't work. We use
+            // NotificationCenter as a blunt force instrument to make it work.
+            if #available(macOS 12, *) {
+                NotificationCenter.default.post(
+                    name: Notification.didBecomeFocusedSurface,
+                    object: to
+                )
+            }
         }
 
         let queue = DispatchQueue.main
