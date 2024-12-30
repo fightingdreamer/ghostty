@@ -330,7 +330,7 @@ extension Ghostty {
         let overlay: Ghostty.Config.ResizeOverlay
         let position: Ghostty.Config.ResizeOverlayPosition
         let duration: UInt
-        let focusInstant: ContinuousClock.Instant?
+        let focusInstant: Any?
 
         // This is the last size that we processed. This is how we handle our
         // timer state.
