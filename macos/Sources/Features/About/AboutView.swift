@@ -127,7 +127,6 @@ struct AboutView: View {
                 .padding(.leading, 2)
                 .tint(.secondary)
                 .opacity(0.8)
-                .monospaced()
         }
 
         var body: some View {
