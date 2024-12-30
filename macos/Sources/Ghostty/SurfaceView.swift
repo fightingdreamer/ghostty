@@ -79,7 +79,7 @@ extension Ghostty {
                     Surface(view: surfaceView, size: geo.size)
                         .focused($surfaceFocus)
                         .focusedValue(\.ghosttySurfaceTitle, surfaceView.title)
-                        .focusedValue(\.ghosttySurfacePwd, surfaceView.pwd)
+//                        .focusedValue(\.ghosttySurfacePwd, surfaceView.pwd)
                         .focusedValue(\.ghosttySurfaceView, surfaceView)
                         .focusedValue(\.ghosttySurfaceCellSize, surfaceView.cellSize)
                     #if canImport(AppKit)
