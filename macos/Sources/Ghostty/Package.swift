@@ -269,6 +269,10 @@ extension Ghostty.Notification {
     static let ghosttyToggleFullscreen = Notification.Name("com.mitchellh.ghostty.toggleFullscreen")
     static let FullscreenModeKey = ghosttyToggleFullscreen.rawValue
 
+    /// Notification that a surface is becoming focused. This is only sent on macOS 12 to
+    /// work around bugs. macOS 13+ should use the ".focused()" attribute.
+    static let didBecomeFocusedSurface = Notification.Name("com.mitchellh.ghostty.didBecomeFocusedSurface")
+
     /// Notification sent to toggle split maximize/unmaximize.
     static let didToggleSplitZoom = Notification.Name("com.mitchellh.ghostty.didToggleSplitZoom")
 
