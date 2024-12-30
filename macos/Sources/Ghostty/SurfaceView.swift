@@ -306,17 +306,6 @@ extension Ghostty {
             // Hidden if we already processed this size.
             if (lastSize == geoSize) { return true; }
 
-            // If we were focused recently we hide it as well. This avoids showing
-            // the resize overlay when SwiftUI is lazily resizing.
-            if let instant = focusInstant {
-                let d = instant.duration(to: ContinuousClock.now)
-                if (d < .milliseconds(500)) {
-                    // Avoid this size completely.
-                    lastSize = geoSize
-                    return true;
-                }
-            }
-
             // Hidden depending on overlay config
             switch (overlay) {
             case .never: return true;
