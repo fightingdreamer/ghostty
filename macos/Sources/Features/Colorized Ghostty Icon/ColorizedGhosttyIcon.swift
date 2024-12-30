@@ -19,11 +19,12 @@ struct ColorizedGhosttyIcon {
         guard let crt = NSImage(named: "CustomIconCRT") else { return nil }
         guard let gloss = NSImage(named: "CustomIconGloss") else { return nil }
 
-        let baseName = switch (frame) {
-        case .aluminum: "CustomIconBaseAluminum"
-        case .beige: "CustomIconBaseBeige"
-        case .chrome: "CustomIconBaseChrome"
-        case .plastic: "CustomIconBasePlastic"
+        let baseName: String
+        switch (frame) {
+        case .aluminum: baseName = "CustomIconBaseAluminum"
+        case .beige: baseName = "CustomIconBaseBeige"
+        case .chrome: baseName = "CustomIconBaseChrome"
+        case .plastic: baseName = "CustomIconBasePlastic"
         }
         guard let base = NSImage(named: baseName) else { return nil }
 
