@@ -19,13 +19,6 @@ extension View {
 
 extension View {
     func pointerStyleFromCursor(_ cursor: NSCursor) -> some View {
-        if #available(macOS 15.0, *) {
-            return self.pointerStyle(.image(
-                Image(nsImage: cursor.image),
-                hotSpot: .init(x: cursor.hotSpot.x, y: cursor.hotSpot.y)
-            ))
-        } else {
-            return self
-        }
+        return self
     }
 }
