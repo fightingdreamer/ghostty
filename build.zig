@@ -933,7 +933,7 @@ fn osVersionMin(tag: std.Target.Os.Tag) ?std.Target.Query.OsVersion {
         // We support back to the earliest officially supported version
         // of macOS by Apple. EOL versions are not supported.
         .macos => .{ .semver = .{
-            .major = 13,
+            .major = 12,
             .minor = 0,
             .patch = 0,
         } },
