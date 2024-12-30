@@ -411,12 +411,12 @@ class AppDelegate: NSObject,
     /// This handles events from the NSEvent.addLocalEventMonitor. We use this so we can get
     /// events without any terminal windows open.
     private func localEventHandler(_ event: NSEvent) -> NSEvent? {
-        return switch event.type {
+        switch event.type {
         case .keyDown:
-            localEventKeyDown(event)
+            return localEventKeyDown(event)
 
         default:
-            event
+            return event
         }
     }
 
@@ -455,7 +455,11 @@ class AppDelegate: NSObject,
 
     @objc private func quickTerminalDidChangeVisibility(_ notification: Notification) {
         guard let quickController = notification.object as? QuickTerminalController else { return }
-        self.menuQuickTerminal?.state = if (quickController.visible) { .on } else { .off }
+        if (quickController.visible) {
+            self.menuQuickTerminal?.state = .on
+        } else {
+            self.menuQuickTerminal?.state = .off
+        }
     }
 
     @objc private func ghosttyConfigDidChange(_ notification: Notification) {
@@ -629,7 +633,11 @@ class AppDelegate: NSObject,
         case .toggle:
             input.global.toggle()
         }
-        self.menuSecureInput?.state = if (input.global) { .on } else { .off }
+        if (input.global) {
+            self.menuSecureInput?.state = .on
+        } else {
+            self.menuSecureInput?.state = .off
+        }
         UserDefaults.standard.set(input.global, forKey: "SecureInput")
     }
 
