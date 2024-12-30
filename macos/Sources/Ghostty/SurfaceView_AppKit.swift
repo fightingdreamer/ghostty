@@ -39,7 +39,7 @@ extension Ghostty {
 
         // The time this surface last became focused. This is a ContinuousClock.Instant
         // on supported platforms.
-        @Published var focusInstant: ContinuousClock.Instant? = nil
+        @Published var focusInstant: Any? = nil
 
         // Returns sizing information for the surface. This is the raw C
         // structure because I'm lazy.
@@ -252,7 +252,7 @@ extension Ghostty {
 
             // On macOS 13+ we can store our continuous clock...
             if (focused) {
-                focusInstant = ContinuousClock.now
+                focusInstant = nil
             }
         }
 
