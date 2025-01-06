@@ -3,6 +3,7 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fe853809-ba8b-400b-83ab-a9a0da25be8a" alt="Logo" width="128">
   <br>Ghostty
+  <br>(for MacOS Monterey)
 </h1>
   <p align="center">
     Fast, native, feature-rich terminal emulator pushing modern features.
@@ -16,6 +17,16 @@
     <a href="#developing-ghostty">Developing</a>
   </p>
 </p>
+
+## Note
+
+This fork is for keeping Ghostty to compile and work under MacOS Monterey.
+
+Available under:
+
+- branch: macos-12
+- tag: v1.0.0-macos-12
+- tag: v1.0.1-macos-12
 
 ## About
 
