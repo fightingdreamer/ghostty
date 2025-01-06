@@ -446,12 +446,12 @@ extension Ghostty {
         // MARK: Local Events
 
         private func localEventHandler(_ event: NSEvent) -> NSEvent? {
-            return switch event.type {
+            switch event.type {
             case .keyUp:
-                localEventKeyUp(event)
+                return localEventKeyUp(event)
 
             default:
-                event
+                return event
             }
         }
 
@@ -878,10 +878,11 @@ extension Ghostty {
             // We need to know the keyboard layout before below because some keyboard
             // input events will change our keyboard layout and we don't want those
             // going to the terminal.
-            let keyboardIdBefore: String? = if (!markedTextBefore) {
-                KeyboardLayout.id
+            let keyboardIdBefore: String?
+            if (!markedTextBefore) {
+                keyboardIdBefore = KeyboardLayout.id
             } else {
-                nil
+                keyboardIdBefore = nil
             }
 
             self.interpretKeyEvents([translationEvent])
