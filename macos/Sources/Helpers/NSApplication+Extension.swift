@@ -24,7 +24,7 @@ extension NSApplication {
     }
 }
 
-extension NSApplication.PresentationOptions.Element: @retroactive Hashable {
+extension NSApplication.PresentationOptions.Element: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(rawValue)
     }
