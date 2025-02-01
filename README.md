@@ -27,6 +27,7 @@ Available under:
 - branch: macos-12
 - tag: v1.0.0-macos-12
 - tag: v1.0.1-macos-12
+- tag: v1.1.0-macos-12
 
 ## About
 
