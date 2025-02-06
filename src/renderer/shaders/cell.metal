@@ -474,8 +474,8 @@ vertex CellTextVertexOut cell_text_vertex(
   // Check if current position is under cursor (including wide cursor)
   bool is_cursor_pos = (
       in.grid_pos.x == uniforms.cursor_pos.x ||
-      uniforms.cursor_wide &&
-        in.grid_pos.x == uniforms.cursor_pos.x + 1
+      (uniforms.cursor_wide &&
+        in.grid_pos.x == uniforms.cursor_pos.x + 1)
     ) && in.grid_pos.y == uniforms.cursor_pos.y;
 
   // If this cell is the cursor cell, then we need to change the color.
