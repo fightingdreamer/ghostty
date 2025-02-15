@@ -218,17 +218,17 @@ extension Ghostty {
             guard ghostty_config_get(config, &v, key, UInt(key.count)) else { return defaultValue }
             guard let ptr = v else { return defaultValue }
             let str = String(cString: ptr)
-            return switch str {
+            switch str {
             case "false":
-                    .native
+                return .native
             case "true":
-                    .nonNative
+                return .nonNative
             case "visible-menu":
-                    .nonNativeVisibleMenu
+                return .nonNativeVisibleMenu
             case "padded-notch":
-                    .nonNativePaddedNotch
+                return .nonNativePaddedNotch
             default:
-                defaultValue
+                return defaultValue
             }
         }
         #endif
