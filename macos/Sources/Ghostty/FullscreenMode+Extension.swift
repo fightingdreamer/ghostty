@@ -3,21 +3,21 @@ import GhosttyKit
 extension FullscreenMode {
     /// Initialize from a Ghostty fullscreen action.
     static func from(ghostty: ghostty_action_fullscreen_e) -> Self? {
-        return switch ghostty {
+        switch ghostty {
         case GHOSTTY_FULLSCREEN_NATIVE:
-                .native
+            return .native
 
         case GHOSTTY_FULLSCREEN_NON_NATIVE:
-                .nonNative
+            return .nonNative
 
         case GHOSTTY_FULLSCREEN_NON_NATIVE_VISIBLE_MENU:
-                .nonNativeVisibleMenu
+            return .nonNativeVisibleMenu
 
         case GHOSTTY_FULLSCREEN_NON_NATIVE_PADDED_NOTCH:
                 .nonNativePaddedNotch
 
         default:
-            nil
+            return nil
         }
     }
 }
