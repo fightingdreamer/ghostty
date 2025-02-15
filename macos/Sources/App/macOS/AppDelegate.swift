@@ -795,10 +795,10 @@ class AppDelegate: NSObject,
         init() {
             // We need to know the key window so that we can bring focus back to the
             // right window if it was hidden.
-            self.keyWindow = if let keyWindow = NSApp.keyWindow {
-                .init(keyWindow)
+            if let keyWindow = NSApp.keyWindow {
+                self.keyWindow = .init(keyWindow)
             } else {
-                nil
+                self.keyWindow = nil
             }
 
             // We need to keep track of the windows that were visible because we only

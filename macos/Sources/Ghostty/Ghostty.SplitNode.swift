@@ -40,10 +40,10 @@ extension Ghostty {
 
         /// Returns true if the tree is split.
         var isSplit: Bool {
-            return if case .leaf = self {
-                false
+            if case .leaf = self {
+                return false
             } else {
-                true
+                return true
             }
         }
 
